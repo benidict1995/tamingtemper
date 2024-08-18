@@ -1,5 +1,6 @@
 package com.benidict.tamingtemper.component.level
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -29,12 +30,13 @@ import androidx.compose.ui.unit.sp
 import com.benidict.domain.model.LevelDTO
 import com.benidict.tamingtemper.R
 import com.benidict.tamingtemper.component.activities.ActivityViewLayout
+import com.benidict.tamingtemper.component.footer.FooterViewLayout
 import com.benidict.tamingtemper.ui.theme.DarkHorse
 import com.benidict.tamingtemper.ui.theme.Devil
 import com.benidict.tamingtemper.ui.theme.euclidCircularFont
 
 @Composable
-fun LevelViewLayout(levelDTO: LevelDTO) {
+fun LevelViewLayout(index: Int, size: Int, levelDTO: LevelDTO) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth().wrapContentHeight()
@@ -86,6 +88,10 @@ fun LevelViewLayout(levelDTO: LevelDTO) {
             items(levelDTO.activities) { item ->
                 ActivityViewLayout(item)
             }
+        }
+
+        if (index == (size-1)) {
+            FooterViewLayout()
         }
     }
 }

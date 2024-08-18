@@ -1,10 +1,8 @@
 package com.benidict.tamingtemper.nav.graph
 
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -24,9 +22,7 @@ fun SetUpNavGraph(isLoggedIn: Boolean = false, navHostController: NavHostControl
             SignInScreen(navHostController = navHostController)
         }
         composable<HomeRoute> {
-            Log.d("makerChecker", "HomeRoute")
             HomeScreen(navHostController = navHostController) {
-                Log.d("makerChecker", "HomeRoute-SignInRoute")
                 navHostController.navigate(SignInRoute) {
                     popUpTo(0)
                 }

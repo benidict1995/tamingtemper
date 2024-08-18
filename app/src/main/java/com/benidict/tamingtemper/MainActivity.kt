@@ -2,7 +2,6 @@ package com.benidict.tamingtemper
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,7 +15,6 @@ import com.benidict.tamingtemper.nav.graph.SetUpNavGraph
 import com.benidict.tamingtemper.ui.theme.TamingtemperTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -37,7 +35,6 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     when(val state = viewModel.state.collectAsState(Dispatchers.IO).value) {
                         is MainState.SetUpNavigation -> {
-                            Log.d("makerChecker", "SetUpNavigation")
                             SetUpNavGraph(
                                 isLoggedIn = state.isLoggedIn
                                 ,navHostController = navController)

@@ -1,6 +1,5 @@
 package com.benidict.tamingtemper.screen.signin
 
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -28,7 +27,6 @@ import com.benidict.tamingtemper.R
 import com.benidict.tamingtemper.component.inputtext.InputViewLayout
 import com.benidict.tamingtemper.component.layout.MainViewLayout
 import com.benidict.tamingtemper.nav.route.HomeRoute
-import com.benidict.tamingtemper.nav.route.SignInRoute
 import java.util.Locale
 
 @Composable
@@ -39,7 +37,6 @@ fun SignInScreen(navHostController: NavHostController) {
         viewModel.state.collect { state ->
             when(state) {
                 SignInState.NavigateToHome -> {
-                    Log.d("makerChecker", "NavigateToHome")
                     navHostController.navigate(HomeRoute) {
                         popUpTo(0)
                     }

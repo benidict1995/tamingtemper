@@ -1,5 +1,6 @@
 package com.benidict.tamingtemper.component.activities
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,7 +15,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
 import com.benidict.domain.model.ActivitiesDTO
 import com.benidict.tamingtemper.R
 import com.benidict.tamingtemper.ui.theme.euclidCircularFont
@@ -26,11 +26,15 @@ fun ActivityViewLayout(activitiesDTO: ActivitiesDTO) {
         modifier = Modifier.fillMaxWidth()
     ) {
         Spacer(modifier = Modifier.height(10.dp))
-        AsyncImage(
+        Image(
+            painter = painterResource(R.drawable.ic_activity),
+            contentDescription = ""
+        )
+        /**AsyncImage(
             error = painterResource(R.drawable.ic_activity),
             model = activitiesDTO.icon.file.url,
             contentDescription = ""
-        )
+        )**/
         Spacer(modifier = Modifier.height(10.dp))
         Text(
             modifier = Modifier.padding(20.dp),
