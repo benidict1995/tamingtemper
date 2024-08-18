@@ -21,7 +21,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SignInViewModel @Inject constructor(
-    @ApplicationContext val context: Context,
     private val signInUseCase: SignInUseCase
 ) : ViewModel() {
     private val _state: MutableSharedFlow<SignInState> = MutableSharedFlow()

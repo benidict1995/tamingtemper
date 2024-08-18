@@ -2,6 +2,7 @@ package com.benidict.tamingtemper.component.header
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -28,7 +29,9 @@ import com.benidict.tamingtemper.ui.theme.TamingtemperTheme
 import com.benidict.tamingtemper.ui.theme.euclidCircularFont
 
 @Composable
-fun HeaderViewLayout() {
+fun HeaderViewLayout(
+    onLogOut: () -> Unit
+) {
     ConstraintLayout(
         modifier = Modifier.padding(top = 32.dp).fillMaxWidth()
     ) {
@@ -97,6 +100,7 @@ fun HeaderViewLayout() {
             )
             Spacer(modifier = Modifier.width(16.dp))
             Image(
+                modifier = Modifier.clickable { onLogOut() },
                 painter = painterResource(R.drawable.ic_profile),
                 contentDescription = ""
             )
@@ -108,6 +112,8 @@ fun HeaderViewLayout() {
 @Preview(showBackground = true)
 fun HeaderViewLayoutPreview() {
     TamingtemperTheme {
-        HeaderViewLayout()
+        HeaderViewLayout {
+
+        }
     }
 }

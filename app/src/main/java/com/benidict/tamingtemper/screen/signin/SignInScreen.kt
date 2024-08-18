@@ -1,5 +1,6 @@
 package com.benidict.tamingtemper.screen.signin
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +28,7 @@ import com.benidict.tamingtemper.R
 import com.benidict.tamingtemper.component.inputtext.InputViewLayout
 import com.benidict.tamingtemper.component.layout.MainViewLayout
 import com.benidict.tamingtemper.nav.route.HomeRoute
+import com.benidict.tamingtemper.nav.route.SignInRoute
 import java.util.Locale
 
 @Composable
@@ -36,7 +39,10 @@ fun SignInScreen(navHostController: NavHostController) {
         viewModel.state.collect { state ->
             when(state) {
                 SignInState.NavigateToHome -> {
-                    navHostController.navigate(HomeRoute)
+                    Log.d("makerChecker", "NavigateToHome")
+                    navHostController.navigate(HomeRoute) {
+                        popUpTo(0)
+                    }
                 }
                 is SignInState.ShowError -> {
                     Toast.makeText(context, state.msg, Toast.LENGTH_SHORT).show()
@@ -44,7 +50,7 @@ fun SignInScreen(navHostController: NavHostController) {
             }
         }
     }
-    MainViewLayout(hasTopAppBar = false, navHostController, title = "test") {
+    MainViewLayout(hasTopAppBar = false, navHostController, title = "") {
         Column(
             modifier = Modifier.fillMaxSize(),
         ) {
@@ -59,7 +65,8 @@ fun SignInScreen(navHostController: NavHostController) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Image(
-                        painter = painterResource(R.drawable.ic_launcher_background),
+                        modifier = Modifier.height(100.dp).width(100.dp),
+                        painter = painterResource(R.drawable.ic_logo),
                         contentDescription = ""
                     )
                     Spacer(

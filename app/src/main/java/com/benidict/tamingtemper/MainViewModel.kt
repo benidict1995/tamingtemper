@@ -1,10 +1,13 @@
 package com.benidict.tamingtemper
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.benidict.data.usecase.IsLoggedInUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -12,17 +15,14 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val isLoggedInUseCase: IsLoggedInUseCase
 ): ViewModel() {
+    private val _state: MutableSharedFlow<MainState> = MutableSharedFlow()
+    val state = _state.asSharedFlow()
 
-    val isLoggedIn: MutableStateFlow<Boolean> = MutableStateFlow(false)
-
-    init {
-        checkIfLoggedIn()
-    }
-
-    private fun checkIfLoggedIn() {
+    fun checkIfLoggedIn() {
         viewModelScope.launch {
+            Log.d("makerChecker", "checkIfLoggedIn")
             val invoke = isLoggedInUseCase.invoke()
-            isLoggedIn.value = invoke?:false
+            _state.emit(MainState.SetUpNavigation(invoke?:false))
         }
     }
 }
