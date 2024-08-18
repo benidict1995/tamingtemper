@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">tamingtemper</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="taming_temper">Taming Temper</string>
+    <string name="percent">3%</string>
+    <string name="zero">0</string>
+    <string name="error_log">incorrect username or password!</string>
+    <string name="find_your_tools">Find your tools</string>
+    <string name="find_your_tools_desc">Collect the best ways for you to notice and\n manage anger</string>
+</resources>
