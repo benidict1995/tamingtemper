@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,11 +31,11 @@ fun FooterViewLayout() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .height(90.dp),
+            .wrapContentHeight(),
         verticalArrangement = Arrangement.Center
     ) {
         HorizontalDivider(thickness = .5.dp, color = SilverChalice)
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(45.dp))
         Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
             Image(
                 painter = painterResource(R.drawable.ic_flag),
@@ -51,7 +52,7 @@ fun FooterViewLayout() {
             color = RoyalBlue,
             text = stringResource(R.string.journey)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(45.dp))
     }
 }
 
