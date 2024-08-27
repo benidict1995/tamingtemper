@@ -20,7 +20,6 @@ class MainViewModel @Inject constructor(
 
     fun checkIfLoggedIn() {
         viewModelScope.launch {
-            Log.d("makerChecker", "checkIfLoggedIn")
             val invoke = isLoggedInUseCase.invoke()
             _state.emit(MainState.SetUpNavigation(invoke?:false))
         }

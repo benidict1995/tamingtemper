@@ -9,5 +9,6 @@ data class LevelDTO (
     val title: String,
     val description: String,
     val state: String,
+    val dates: List<DateDTO>,
     val activities: List<ActivitiesDTO>
 )

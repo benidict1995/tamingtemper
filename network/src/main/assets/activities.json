@@ -5,6 +5,26 @@
       "title": "Find your tools",
       "description": "Collect your personalised techniques to beat Anxiety",
       "state": "AVAILABLE",
+      "dates": [
+        {
+          "date": "2024-08-21"
+        },
+        {
+          "date": "2024-08-22"
+        },
+        {
+          "date": "2024-08-23"
+        },
+        {
+          "date": "2024-08-24"
+        },
+        {
+          "date": "2024-08-25"
+        },
+        {
+          "date": "2024-08-27"
+        }
+      ],
       "activities": [
         {
           "id": "2ECefjj9gotSu1RzQYguQV7FBMJel296NaotMcf3PwJ432uh72",
@@ -81,6 +101,20 @@
       "title": "Understanding your anxiety",
       "description": "Understanding anxiety is the first step towards overcoming it.",
       "state": "LOCKED",
+      "dates": [
+        {
+          "date": "2024-08-21"
+        },
+        {
+          "date": "2024-08-24"
+        },
+        {
+          "date": "2024-08-25"
+        },
+        {
+          "date": "2024-08-27"
+        }
+      ],
       "activities": [
         {
           "id": "2oB58CKFmXQrF1TpCT0QzV7FBMJel296NaotMcf3PwJ432uh72",
@@ -259,6 +293,17 @@
       "title": "Building your toolbox",
       "description": "Develop your first set of techniques to start fighting anxiety",
       "state": "LOCKED",
+      "dates": [
+        {
+          "date": "2024-08-24"
+        },
+        {
+          "date": "2024-08-25"
+        },
+        {
+          "date": "2024-08-27"
+        }
+      ],
       "activities": [
         {
           "id": "1VhhSkKChB7LwwXN6KhmLw7FBMJel296NaotMcf3PwJ432uh72",
@@ -471,6 +516,14 @@
       "title": "Tackling anxiety at its source",
       "description": "Expand your toolbox to challenge anxiety head on.",
       "state": "LOCKED",
+      "dates": [
+        {
+          "date": "2024-08-25"
+        },
+        {
+          "date": "2024-08-27"
+        }
+      ],
       "activities": [
         {
           "id": "4Bvp5zOCp3fcZlEL6IutmQ7FBMJel296NaotMcf3PwJ432uh72",
@@ -581,6 +634,17 @@
       "title": "Dealing with thought spirals",
       "description": "Move towards mastering the tools to bring you tranquility and reduce spiraling.",
       "state": "LOCKED",
+      "dates": [
+        {
+          "date": "2024-08-23"
+        },
+        {
+          "date": "2024-08-24"
+        },
+        {
+          "date": "2024-08-25"
+        }
+      ],
       "activities": [
         {
           "id": "693AGr5QOAwvEjOL6FB2457FBMJel296NaotMcf3PwJ432uh72",
@@ -793,6 +857,14 @@
       "title": "Defeating your worries",
       "description": "Conquer your concerns and become the CEO of Serenity!",
       "state": "LOCKED",
+      "dates": [
+        {
+          "date": "2024-08-24"
+        },
+        {
+          "date": "2024-08-25"
+        }
+      ],
       "activities": [
         {
           "id": "2K4czMMQ0VVrMN3YFOxMZE7FBMJel296NaotMcf3PwJ432uh72",
@@ -971,6 +1043,14 @@
       "title": "Building a calm future",
       "description": "Create better habits so anxiety doesnâ€™t return in strength in the future",
       "state": "LOCKED",
+      "dates": [
+        {
+          "date": "2024-08-24"
+        },
+        {
+          "date": "2024-08-25"
+        }
+      ],
       "activities": [
         {
           "id": "2PIvmwxYa4mVFNP0qR0MQQ7FBMJel296NaotMcf3PwJ432uh72",
