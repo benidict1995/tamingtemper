@@ -27,15 +27,16 @@ import com.benidict.tamingtemper.ui.theme.TamingtemperTheme
 import com.benidict.tamingtemper.ui.theme.euclidCircularFont
 
 @Composable
-fun FooterViewLayout() {
+fun FooterViewLayout(modifier: Modifier) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .wrapContentHeight(),
+            .wrapContentHeight()
+            .then(modifier),
         verticalArrangement = Arrangement.Center
     ) {
         HorizontalDivider(thickness = .5.dp, color = SilverChalice)
-        Spacer(modifier = Modifier.height(45.dp))
+        Spacer(modifier = Modifier.height(25.dp))
         Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
             Image(
                 painter = painterResource(R.drawable.ic_flag),
@@ -52,7 +53,7 @@ fun FooterViewLayout() {
             color = RoyalBlue,
             text = stringResource(R.string.journey)
         )
-        Spacer(modifier = Modifier.height(45.dp))
+        Spacer(modifier = Modifier.height(25.dp))
     }
 }
 
@@ -60,6 +61,6 @@ fun FooterViewLayout() {
 @Preview(showBackground = true)
 fun FooterViewLayoutPreview() {
     TamingtemperTheme {
-        FooterViewLayout()
+        FooterViewLayout(Modifier)
     }
 }

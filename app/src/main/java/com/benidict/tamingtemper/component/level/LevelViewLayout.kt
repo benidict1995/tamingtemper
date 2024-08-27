@@ -90,8 +90,8 @@ fun LevelViewLayout(index: Int, size: Int, levelDTO: LevelDTO) {
             }
         }
 
-        if (index == (size-1)) {
-            FooterViewLayout()
-        }
+//        if (index == (size-1)) {
+//            FooterViewLayout()
+//        }
     }
 }

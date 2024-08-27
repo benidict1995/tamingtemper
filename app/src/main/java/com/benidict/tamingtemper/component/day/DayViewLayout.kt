@@ -1,8 +1,10 @@
 package com.benidict.tamingtemper.component.day
 
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -28,17 +30,21 @@ import java.util.Locale
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun DayViewLayout(calendar: CalendarUIModel) {
-    val isDateToday = calendar.date == getDayToday().toString()
+fun DayViewLayout(calendar: CalendarUIModel, selectedDate: String, onDateSelected: (String) -> Unit) {
+    val dateSelected = calendar.date == selectedDate
+    Log.d("makerChecker", "dateSelected:$dateSelected, calendar.date:${calendar.date}, selectedDate:$selectedDate")
     Column(
         modifier = Modifier.wrapContentWidth(Alignment.CenterHorizontally)
     ) {
         Column(
-            modifier = Modifier.padding(horizontal = 13.5.dp)
+            modifier = Modifier.padding(horizontal = 13.5.dp).clickable {
+                Log.d("makerChecker", "dated:${calendar.date}")
+                onDateSelected(calendar.date)
+            }
         ) {
             Image(
                 painter = painterResource(
-                    if (isDateToday)
+                    if (dateSelected)
                         R.drawable.ic_day_active else R.drawable.ic_day_inactive
                 ),
                 contentDescription = ""
@@ -49,7 +55,7 @@ fun DayViewLayout(calendar: CalendarUIModel) {
             Text(
                 fontFamily = euclidCircularFont,
                 fontWeight = FontWeight.Medium,
-                color = if (isDateToday) RoyalBlue else SilverChalice,
+                color = if (dateSelected) RoyalBlue else SilverChalice,
                 fontSize = 12.sp,
                 modifier = Modifier,
                 text = calendar.days.toUpperCase(Locale.ENGLISH)
@@ -59,7 +65,7 @@ fun DayViewLayout(calendar: CalendarUIModel) {
             modifier = Modifier
                 .height(1.dp)
                 .width(50.dp),
-            progress = if (isDateToday) 100f else 0f
+            progress = if (dateSelected) 100f else 0f
         )
     }
 }
