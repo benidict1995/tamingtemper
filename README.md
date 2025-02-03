@@ -41,3 +41,4 @@ To logout the account please tap the profile icon.
 
 <img width="323" alt="Screenshot 2024-08-18 at 10 36 58 PM" src="https://github.com/user-attachments/assets/ad9bda2f-9aee-4746-99f2-f087fc0af187">
 
+[Screen_recording_20240824_124148.webm](https://github.com/user-attachments/assets/804e8d14-ccc4-4133-8186-bd92142f7172)
